@@ -1,4 +1,4 @@
-# Nova Branch
+# App Quiz
 
 [![Dart CI](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml/badge.svg)](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml)
 
