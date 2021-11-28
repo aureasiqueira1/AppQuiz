@@ -5,11 +5,11 @@ class QuizLogic {
   int _questionNumber = 0;
 
   final List<Question> _questions = [
-    Question('Brasilia is the capital of Brazil', true),
-    Question('The Indian Ocean is the third largest ocean in the world', true),
-    Question('The city of Utrecht is in Holland', false),
-    Question('There are more countries in Africa than Asia', true),
-    Question('Seattle is more northerly than New York', true),
+    Question('Merge é a união de uma branch com a outra', true),
+    Question('Criando uma nova branch é possível testar novas funcionalidades sem afetar a branch principal', true),
+    Question('O .gitignore serve para tornar seu repositório open source', false),
+    Question('O comando git checkout branch_destino troca de branch', true),
+    Question('Teste Mock são objetos que simulam o comportamento de objetos reais de forma controlada', true),
 
   ];
 
