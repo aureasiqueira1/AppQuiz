@@ -95,6 +95,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Container(
+              key: Key("questionField"),
               height: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -121,6 +122,7 @@ class _QuizPageState extends State<QuizPage> {
                 child: Padding(
                   padding: EdgeInsets.all(5.0),
                   child: FlatButton(
+                    key: Key("trueButton"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0)
                     ),
@@ -145,6 +147,7 @@ class _QuizPageState extends State<QuizPage> {
                 child: Padding(
                   padding: EdgeInsets.all(5.0),
                   child: FlatButton(
+                    key: Key("falseButton"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0)
                     ),
