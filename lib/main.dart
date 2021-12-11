@@ -56,13 +56,13 @@ class _QuizPageState extends State<QuizPage> {
     if (quizLogic.isFinshed() == true) {
       Alert(
         context: context,
-        title: 'Finished',
-        desc: 'You scored a total of $totalCorrect out of $totalQuestions!',
+        title: 'Finalizado!',
+        desc: 'Você marcou um total de $totalCorrect de $totalQuestions!',
         buttons: [
           DialogButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Play Again',
+              'Jogar novamente',
               style: TextStyle(color: Colors.white, fontSize: 22),
             )
           )
