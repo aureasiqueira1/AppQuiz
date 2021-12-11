@@ -12,9 +12,9 @@ class QuizApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.pink[50],
+        backgroundColor: Colors.deepPurple[300],
         appBar: AppBar(
-          backgroundColor: Colors.blue[200],
+          backgroundColor: Colors.black,
           title: Text(
             'Quiz App',
             style: TextStyle(fontSize: 30),
@@ -98,7 +98,7 @@ class _QuizPageState extends State<QuizPage> {
               height: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                color: Colors.blue[200],
+                color: Colors.black,
               ),
               child: Center(
                 child: Text(
@@ -125,9 +125,9 @@ class _QuizPageState extends State<QuizPage> {
                       borderRadius: BorderRadius.circular(18.0)
                     ),
                     textColor: Colors.white,
-                    color: Colors.greenAccent[400],
+                    color: Colors.green,
                     child: Text(
-                      'TRUE',
+                      'VERDADEIRO',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
@@ -149,9 +149,9 @@ class _QuizPageState extends State<QuizPage> {
                       borderRadius: BorderRadius.circular(18.0)
                     ),
                     textColor: Colors.white,
-                    color: Colors.redAccent[400],
+                    color: Colors.red,
                     child: Text(
-                      'FALSE',
+                      'FALSO',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
