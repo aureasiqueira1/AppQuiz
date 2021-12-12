@@ -9,6 +9,7 @@
 - [Como executar](#-como-executar)
 - [Estrutura de arquivos](#-estrutura-de-arquivos)
 - [Tecnologias](#-tecnologias)
+- [Considerações](#-considerações)
 
 
 ## 💻 Sobre
