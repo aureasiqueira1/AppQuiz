@@ -1,6 +1,9 @@
 # App Quiz
 
 [![Dart CI](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml/badge.svg)](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml)
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
 - [Sobre](#-sobre)
 - [Como executar](#-como-executar)
@@ -255,8 +258,8 @@ AppQuiz
 
 
 ### Dependências de desenvolvimento
--[Dart](https://dart.dev/tools/vs-code)
--[Flutter](https://flutter.dev/docs/development/tools/vs-code)
+- [Dart](https://dart.dev/tools/vs-code)
+- [Flutter](https://flutter.dev/docs/development/tools/vs-code)
 
 
 ## 🌱 Considerações
