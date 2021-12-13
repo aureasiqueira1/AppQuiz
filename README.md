@@ -1,9 +1,9 @@
 # App Quiz
 
 [![Dart CI](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml/badge.svg)](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml)
-![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=flat&logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white)
 
 - [Sobre](#-sobre)
 - [Como executar](#-como-executar)
@@ -15,7 +15,17 @@
 ## 💻 Sobre
 
 Este é o nosso projeto do laboratório de Engenharia de software (C214), um pequeno app de quiz feito para aplicar nossos conhecimentos.
+<br/>
+Consiste em um quiz com 5 perguntas de verdadeiro ou falso que englobam conhecimentos da disciplina de engenharia de software, foi desenvolvido em flutter utilizando o dart como linguagem.
+<br/>
+A seguir você poderá ver como é a aparencia do nosso app quando rodando na web, utilizando o browser google chrome, uma questão eu o aviso ao concluir o quiz.
+<br/>
+### 📷 Imagens do aplicativo
 
+<br>
+<img src="images/example(1).png" height="350px">
+<br>
+<img src="images/example(2).png" height="350px">
 <br/>
 
 ---
@@ -25,11 +35,13 @@ Este é o nosso projeto do laboratório de Engenharia de software (C214), um peq
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-
-- [Git](https://git-scm.com/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Dart](https://dart.dev)
-- [Flutter](https://flutter.dev)
+<br/>
+<br/>
+para poder ter o projeto em sua máquina, para que possa executar e fazer alterações, instale o [Git](https://git-scm.com/)
+<br/>
+recomendamos o [Visual Studio Code](https://code.visualstudio.com/) como editor de texto, ele será útil para obter as dependências e executar o app.
+<br/>
+baixe a sdk do [Flutter](https://flutter.dev), que nas versões mais novas já vem com o [Dart](https://dart.dev) incluso.
 
 
 ### Clonando repositório
@@ -42,20 +54,25 @@ $ git clone https://github.com/aureasiqueira1/C214-LAB.git
 ### Instalando dependências da aplicação
 Recomendamos utilizar o VisualStudio Code, ao abrir o código dentro dele, baixe as 
 extensões do flutter e dart que ele oferece, depois o próprio software oferece
-a opção de baixar os pacotes necessários, se ele não oferecer, pressione F5. 
-Uma outra opção é procurar pelo arquivo 'pubspec.yaml' e apertar em get package.
+a opção de baixar os pacotes necessários, se ele não oferecer, utilize o seguinte comando no terminal:
+```
+flutter pub get
+```
+Uma outra opção é procurar pelo arquivo 'pubspec.yaml' e apertar em "get package".
 
 ### Iniciando a aplicação
 Para ver a aplicação funcionando, abra o terminal do VsCode e digite o comando
-```sh
+```
 flutter run
 ```
 e siga a instrução para escolher seu navegador (recomendamos o Google Chrome)
 
-Para saber se os testes funcionaram, dentro do terminal do VsCode use o comando
+### Rodando os testes
+- Para saber se os testes funcionaram, dentro do terminal use o comando
 ```sh
 flutter test --no-sound-null-safety
 ```
+- Se estiver utlizando o Visual Studio Code, ou outro editor que permita, é possível executar os testes através do próprio arquivo question_test.dart ou widget_test.dart que se encontram na pasta test.
 
 ## 📁 Estrutura de arquivos
 
@@ -256,12 +273,14 @@ AppQuiz
 
 ### Ferramentas e Serviços
 - [Git](https://git-scm.com/)
+- [Flutter](https://flutter.dev/docs/development/tools/vs-code)
 
 
 ### Dependências de desenvolvimento
 - [Dart](https://dart.dev/tools/vs-code)
-- [Flutter](https://flutter.dev/docs/development/tools/vs-code)
-
+- [Test](https://docs.flutter.dev/testing)
+- [Mockito](https://pub.dev/packages/mockito)
+- [Flutter Lints](https://pub.dev/packages/flutter_lints)
 
 ## 🌱 Considerações
 
@@ -274,5 +293,5 @@ Alguns recursos que podem ser uteis para você começar o seu projeto:
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 Para obter ajuda no inicio com o flutter, visite a
-[online documentation](https://flutter.dev/docs), que oferece tutoriais,
+[documentação](https://flutter.dev/docs), que oferece tutoriais,
 exemplos, guias no desenvolvimento mobile e todas as referencias sobre API. 
