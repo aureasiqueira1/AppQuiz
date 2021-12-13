@@ -2,91 +2,122 @@ import 'package:test/test.dart';
 import 'package:projeto/question.dart';
 
 void main() {
-  
   int _questionNumber = 0;
 
-   final List<Question> _questions = [
-     Question('Merge é a união de uma branch com a outra', true),
-     Question('Criando uma nova branch é possível testar novas funcionalidades sem afetar a branch principal', true),
-     Question('O .gitignore serve para tornar seu repositório open source', false),
-     Question('O comando git checkout branch_destino troca de branch', true),
-     Question('Teste Mock são objetos que simulam o comportamento de objetos reais de forma controlada', true),
-   ];
+  final List<Question> _questions = [
+    Question('Merge é a união de uma branch com a outra', true),
+    Question(
+        'Criando uma nova branch é possível testar novas funcionalidades sem afetar a branch principal',
+        true),
+    Question(
+        'O .gitignore serve para tornar seu repositório open source', false),
+    Question('O comando git checkout branch_destino troca de branch', true),
+    Question(
+        'Teste Mock são objetos que simulam o comportamento de objetos reais de forma controlada',
+        true),
+  ];
 
-     bool getAnswer() {
-       return _questions[_questionNumber].questionAnswer;
-     }
+  bool getAnswer() {
+    return _questions[_questionNumber].questionAnswer;
+  }
 
-   int questionsLength() {
-     return _questions.length;
-   }
+  int questionsLength() {
+    return _questions.length;
+  }
 
-    bool isFinshed() {
-      if (_questionNumber >= _questions.length - 1) {
-        return true;
+  bool isFinshed() {
+    if (_questionNumber >= _questions.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  test("Testa se há questões", () {
+    int tamanhoLista = questionsLength();
+    bool verificacao = false;
+    if (tamanhoLista > 0) {
+      verificacao = true;
+    }
+    expect(true, equals(verificacao));
+  });
+
+  test("Teste do tamanho da quantidade de questões", () {
+    int tamanhoLista = questionsLength();
+    expect(5, equals(tamanhoLista)); //trocar questionsLength() por 5
+  });
+
+  test("Verifica se a resposta condiz com o número da pergunta", () {
+    bool valida0 = false;
+    bool valida1 = false;
+    bool valida2 = false;
+    bool valida3 = false;
+    bool valida4 = false;
+    bool questoesValidadas = false;
+
+    for (_questionNumber = 0; _questionNumber < 5; _questionNumber++) {
+      if (getAnswer() == false) {
+        if (_questionNumber == 2) {
+          valida2 = true;
+        }
       } else {
-        return false;
+        if (_questionNumber == 0) {
+          valida0 = true;
+        } else if (_questionNumber == 1) {
+          valida1 = true;
+        } else if (_questionNumber == 3) {
+          valida3 = true;
+        } else if (_questionNumber == 4) {
+          valida4 = true;
+        }
       }
     }
 
-    test("Testa se há questões", () {
-      int tamanhoLista = questionsLength();
-      bool verificacao = false;
-      if(tamanhoLista > 0)
-        {
-          verificacao = true;
-        }
-      expect(true, equals(verificacao));
-    });  
+    if (valida0 == true &&
+        valida1 == true &&
+        valida2 == true &&
+        valida3 == true &&
+        valida4 == true) {
+      questoesValidadas = true;
+    }
 
-    test("Teste do tamanho da quantidade de questões", () {
-      int tamanhoLista = questionsLength();
-      expect(5, equals(tamanhoLista)); //trocar questionsLength() por 5
-    });
+    expect(true, equals(questoesValidadas));
+  });
 
-   test("Verifica se a resposta condiz com o número da pergunta", (){
-
-     bool valida0 = false;
-     bool valida1 = false;
-     bool valida2 = false;
-     bool valida3 = false;
-     bool valida4 = false;
-     bool questoesValidadas = false;
-
-     for(_questionNumber = 0; _questionNumber < 5; _questionNumber++){
-       if(getAnswer() == false){
-         if(_questionNumber == 2){
-           valida2 = true;
-          }
-        }else{
-          if(_questionNumber == 0){
-            valida0 = true;
-          }else if (_questionNumber == 1){
-            valida1 = true;
-          }else if(_questionNumber == 3){
-            valida3 = true;
-          }else if(_questionNumber == 4){
-            valida4 = true;
-          }
-        }
+  test("Teste de conclusão", () {
+    bool finalizado = false;
+    for (_questionNumber = 0; _questionNumber < 10; _questionNumber++) {
+      if (isFinshed() == true) {
+        finalizado = true;
       }
+    }
+    expect(true, equals(finalizado));
+  });
 
-      if(valida0 == true && valida1 == true && valida2 == true && valida3 == true && valida4 == true){
-        questoesValidadas = true;
-      }
-      
-      expect(true, equals(questoesValidadas));
+  test("teste de primeira pergunta", () {
+    expect("Merge é a união de uma branch com a outra",
+        equals(_questions[0].questionString));
+  });
 
-    });
+  test("teste de segunda pergunta", () {
+    expect(
+        "Criando uma nova branch é possível testar novas funcionalidades sem afetar a branch principal",
+        equals(_questions[1].questionString));
+  });
 
-    test("Teste de conclusão", (){
-      bool finalizado = false;
-     for(_questionNumber = 0; _questionNumber < 10; _questionNumber++){
-       if (isFinshed() ==  true){
-         finalizado = true;
-       }
-      }
-      expect(true, equals(finalizado));
-    });
+  test("teste de terceira pergunta", () {
+    expect("O .gitignore serve para tornar seu repositório open source",
+        equals(_questions[2].questionString));
+  });
 
+  test("teste de quarta pergunta", () {
+    expect("O comando git checkout branch_destino troca de branch",
+        equals(_questions[3].questionString));
+  });
+
+  test("teste de quinta pergunta", () {
+    expect(
+        "Teste Mock são objetos que simulam o comportamento de objetos reais de forma controlada",
+        equals(_questions[4].questionString));
+  });
 }
