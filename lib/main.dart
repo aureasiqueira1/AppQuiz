@@ -78,13 +78,11 @@ class _QuizPageState extends State<QuizPage> {
   Widget build(BuildContext context) {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
-      primary: Colors.white,
       backgroundColor: Colors.red,
     );
 
     final ButtonStyle flatButtonStyle2 = TextButton.styleFrom(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
-      primary: Colors.white,
       backgroundColor: Colors.green,
     );
 
