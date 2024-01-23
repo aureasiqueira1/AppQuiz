@@ -37,7 +37,6 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-
   final List<Widget> scoreKeeper = [];
 
   int totalCorrect = 0;
@@ -47,27 +46,25 @@ class _QuizPageState extends State<QuizPage> {
     if (quizLogic.getAnswer() == value) {
       print('right answer');
       scoreKeeper.add(Icon(Icons.check, color: Colors.green));
-      totalCorrect ++;
+      totalCorrect++;
     } else {
       print('wrong answer');
-    scoreKeeper.add(Icon(Icons.close, color: Colors.red));
+      scoreKeeper.add(Icon(Icons.close, color: Colors.red));
     }
     totalQuestions++;
     if (quizLogic.isFinshed() == true) {
       Alert(
-        context: context,
-        title: 'Finalizado!',
-        desc: 'Você marcou um total de $totalCorrect de $totalQuestions!',
-        buttons: [
-          DialogButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(
-              'Jogar novamente',
-              style: TextStyle(color: Colors.white, fontSize: 22),
-            )
-          )
-        ]
-      ).show();
+          context: context,
+          title: 'Finalizado!',
+          desc: 'Você marcou um total de $totalCorrect de $totalQuestions!',
+          buttons: [
+            DialogButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text(
+                  'Jogar novamente',
+                  style: TextStyle(color: Colors.white, fontSize: 22),
+                ))
+          ]).show();
       quizLogic.reset();
       scoreKeeper.clear();
       totalCorrect = 0;
@@ -75,13 +72,22 @@ class _QuizPageState extends State<QuizPage> {
     } else {
       quizLogic.nextQuestion();
     }
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+      primary: Colors.white,
+      backgroundColor: Colors.red,
+    );
+
+    final ButtonStyle flatButtonStyle2 = TextButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+      primary: Colors.white,
+      backgroundColor: Colors.green,
+    );
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -93,26 +99,25 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           flex: 2,
           child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Container(
-              key: Key("questionField"),
-              height: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                color: Colors.black,
-              ),
-              child: Center(
-                child: Text(
-                  quizLogic.getQuestion(),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30.0,
+              padding: EdgeInsets.all(10.0),
+              child: Container(
+                key: Key("questionField"),
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  color: Colors.black,
+                ),
+                child: Center(
+                  child: Text(
+                    quizLogic.getQuestion(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30.0,
+                    ),
                   ),
                 ),
-              ),
-            )
-          ),
+              )),
         ),
         Expanded(
           child: Row(
@@ -121,13 +126,9 @@ class _QuizPageState extends State<QuizPage> {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(5.0),
-                  child: FlatButton(
+                  child: TextButton(
                     key: Key("trueButton"),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0)
-                    ),
-                    textColor: Colors.white,
-                    color: Colors.green,
+                    style: flatButtonStyle2,
                     child: Text(
                       'VERDADEIRO',
                       style: TextStyle(
@@ -135,9 +136,9 @@ class _QuizPageState extends State<QuizPage> {
                         fontSize: 20.0,
                       ),
                     ),
-                    onPressed: (){
+                    onPressed: () {
                       setState(() {
-                        checkAnswer(true);                        
+                        checkAnswer(true);
                       });
                     },
                   ),
@@ -146,13 +147,9 @@ class _QuizPageState extends State<QuizPage> {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(5.0),
-                  child: FlatButton(
+                  child: TextButton(
                     key: Key("falseButton"),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0)
-                    ),
-                    textColor: Colors.white,
-                    color: Colors.red,
+                    style: flatButtonStyle,
                     child: Text(
                       'FALSO',
                       style: TextStyle(
@@ -160,7 +157,7 @@ class _QuizPageState extends State<QuizPage> {
                         fontSize: 20.0,
                       ),
                     ),
-                    onPressed: (){
+                    onPressed: () {
                       setState(() {
                         checkAnswer(false);
                       });
@@ -171,7 +168,11 @@ class _QuizPageState extends State<QuizPage> {
             ],
           ),
         ),
-        Expanded(child: Row(children: scoreKeeper,),)
+        Expanded(
+          child: Row(
+            children: scoreKeeper,
+          ),
+        )
       ],
     );
   }
