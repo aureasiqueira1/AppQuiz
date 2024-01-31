@@ -1,5 +1,7 @@
 # App Quiz
 
+<h4 align="center"><a href="https://aureasiqueira1.github.io/AppQuiz/#/">Clique para visitar o projeto</a></h4>
+
 [![Dart CI](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml/badge.svg)](https://github.com/aureasiqueira1/AppQuiz/actions/workflows/dart.yml)
 ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=flat&logo=dart&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white)
