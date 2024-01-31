@@ -9,8 +9,14 @@ void main() => runApp(QuizApp());
 class QuizApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ThemeData tema = ThemeData();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: tema.copyWith(
+        colorScheme: tema.colorScheme
+            .copyWith(primary: Colors.red, secondary: Colors.green),
+      ),
       home: Scaffold(
         backgroundColor: Colors.deepPurple[300],
         appBar: AppBar(
